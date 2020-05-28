@@ -44,7 +44,6 @@ namespace Parcial_Segundo
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
-            this.txtBusinessNameProduct = new System.Windows.Forms.TextBox();
             this.txtAddProductName = new System.Windows.Forms.TextBox();
             this.tabBusiness = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -65,7 +64,7 @@ namespace Parcial_Segundo
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAdressDireccion = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbUserDirection = new System.Windows.Forms.ComboBox();
             this.btnEliminarDireccion = new System.Windows.Forms.Button();
             this.btnModificarDireccion = new System.Windows.Forms.Button();
             this.btnAgregarDireccion = new System.Windows.Forms.Button();
@@ -129,6 +128,7 @@ namespace Parcial_Segundo
             this.button8 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.cmbNombreNegocioPedido = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
@@ -268,11 +268,11 @@ namespace Parcial_Segundo
             this.tabProducts.BackgroundImage = global::Parcial_Segundo.Properties.Resources.logo_mainbackground;
             this.tabProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabProducts.Controls.Add(this.groupBox7);
-            this.tabProducts.Location = new System.Drawing.Point(4, 25);
+            this.tabProducts.Location = new System.Drawing.Point(4, 29);
             this.tabProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabProducts.Size = new System.Drawing.Size(1038, 679);
+            this.tabProducts.Size = new System.Drawing.Size(1038, 675);
             this.tabProducts.TabIndex = 4;
             this.tabProducts.Text = "Pedidos";
             this.tabProducts.UseVisualStyleBackColor = true;
@@ -297,10 +297,10 @@ namespace Parcial_Segundo
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel5.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
+            this.tableLayoutPanel5.Controls.Add(this.cmbNombreNegocioPedido, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label10, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnAddProduct, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.txtBusinessNameProduct, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtAddProductName, 1, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 22);
@@ -354,15 +354,6 @@ namespace Parcial_Segundo
             this.btnAddProduct.Text = "Añadir Producto";
             this.btnAddProduct.UseVisualStyleBackColor = true;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // txtBusinessNameProduct
-            // 
-            this.txtBusinessNameProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBusinessNameProduct.Location = new System.Drawing.Point(374, 65);
-            this.txtBusinessNameProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBusinessNameProduct.Name = "txtBusinessNameProduct";
-            this.txtBusinessNameProduct.Size = new System.Drawing.Size(307, 27);
-            this.txtBusinessNameProduct.TabIndex = 1;
             // 
             // txtAddProductName
             // 
@@ -597,7 +588,7 @@ namespace Parcial_Segundo
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtAdressDireccion, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cmbUserDirection, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -646,15 +637,15 @@ namespace Parcial_Segundo
             this.txtAdressDireccion.Size = new System.Drawing.Size(365, 154);
             this.txtAdressDireccion.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbUserDirection
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(296, 96);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 28);
-            this.comboBox1.TabIndex = 4;
+            this.cmbUserDirection.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbUserDirection.FormattingEnabled = true;
+            this.cmbUserDirection.Location = new System.Drawing.Point(296, 96);
+            this.cmbUserDirection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbUserDirection.Name = "cmbUserDirection";
+            this.cmbUserDirection.Size = new System.Drawing.Size(206, 28);
+            this.cmbUserDirection.TabIndex = 4;
             // 
             // btnEliminarDireccion
             // 
@@ -698,11 +689,11 @@ namespace Parcial_Segundo
             this.tabAdmin.Controls.Add(this.groupBox9);
             this.tabAdmin.Controls.Add(this.groupBox8);
             this.tabAdmin.Controls.Add(this.groupBox3);
-            this.tabAdmin.Location = new System.Drawing.Point(4, 29);
+            this.tabAdmin.Location = new System.Drawing.Point(4, 25);
             this.tabAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAdmin.Size = new System.Drawing.Size(1038, 675);
+            this.tabAdmin.Size = new System.Drawing.Size(1038, 679);
             this.tabAdmin.TabIndex = 1;
             this.tabAdmin.Text = "Administrador";
             // 
@@ -715,7 +706,7 @@ namespace Parcial_Segundo
             this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox9.ForeColor = System.Drawing.Color.White;
-            this.groupBox9.Location = new System.Drawing.Point(3, 295);
+            this.groupBox9.Location = new System.Drawing.Point(3, 299);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -755,7 +746,7 @@ namespace Parcial_Segundo
             this.groupBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox8.BackColor = System.Drawing.Color.White;
             this.groupBox8.Controls.Add(this.tableLayoutPanel7);
-            this.groupBox8.Location = new System.Drawing.Point(503, 4);
+            this.groupBox8.Location = new System.Drawing.Point(503, 6);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1509,6 +1500,15 @@ namespace Parcial_Segundo
             this.label18.Text = "Nombre de Negocio a Eliminar:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbNombreNegocioPedido
+            // 
+            this.cmbNombreNegocioPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbNombreNegocioPedido.FormattingEnabled = true;
+            this.cmbNombreNegocioPedido.Location = new System.Drawing.Point(409, 65);
+            this.cmbNombreNegocioPedido.Name = "cmbNombreNegocioPedido";
+            this.cmbNombreNegocioPedido.Size = new System.Drawing.Size(237, 28);
+            this.cmbNombreNegocioPedido.TabIndex = 4;
+            // 
             // frmMainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1624,7 +1624,6 @@ namespace Parcial_Segundo
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.TextBox txtBusinessNameProduct;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtAddProductName;
@@ -1674,8 +1673,9 @@ namespace Parcial_Segundo
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtAdminCreateUserName;
         private System.Windows.Forms.TextBox txtUserPassword;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.RadioButton rbUserAdmin;
+        private System.Windows.Forms.ComboBox cmbUserDirection;
+        private System.Windows.Forms.ComboBox cmbNombreNegocioPedido;
     }
 }

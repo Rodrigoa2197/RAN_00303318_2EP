@@ -2,13 +2,18 @@
 {
     public class Address
     {
-        public int idAdress { get; set; }
+        public int idAddress { get; set; }
+        public int idUser { get; set; }
         public string address { get; set; }
+        
+
 
         public Address()
         {
-            idAdress = -1;
+            idAddress = -1;
+            idUser = -1;
             address= "";
+
         }
     }
 }

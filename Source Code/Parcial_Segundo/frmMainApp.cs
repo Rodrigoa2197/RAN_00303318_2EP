@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Parcial_Segundo
@@ -16,7 +17,24 @@ namespace Parcial_Segundo
 
         private void frmMainApp_Load(object sender, EventArgs e)
         {
-            
+            string sql = "SELECT * FROM BUSINESS";
+
+            DataTable dt = ConnectionDB.ExecuteQuery(sql);
+
+            List<Business> lista = new List<Business>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                Business add = new Business();
+                add.idBusiness = Convert.ToInt32(row[0].ToString());
+                add.name = row[1].ToString();
+                add.description = row[2].ToString();
+                lista.Add(add);
+            }
+
+            cmbNombreNegocioPedido.ValueMember = "idBusiness";
+            cmbNombreNegocioPedido.DisplayMember = "name";
+            cmbNombreNegocioPedido.DataSource = lista;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -78,17 +96,59 @@ namespace Parcial_Segundo
 
         private void btnAddBusiness_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (txtNameBusiness.Text.Equals("") || txtDescripcionBusiness.Text.Equals(""))
+            {
+                MessageBox.Show("¡AVISO: Debe de ingresar información en todos los campos!");
+            }
+            else
+            {
+                try
+                {
+                    AddBusinessVerification(txtNameBusiness.Text, txtDescripcionBusiness.Text);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("¡AVISO: Ha ocurrido un error!");
+                }
+            }
+            void AddBusinessVerification(String name, String description)
+            {
+                string sql = $"INSERT INTO BUSINESS(name, description) VALUES ('{name}', '{description}')";
+                ConnectionDB.ExecuteQuery(sql);
+                MessageBox.Show("SUCCESS: Negocio añadido exitosamente");
+            }
         }
 
         private void btnDeleteBusiness_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (MessageBox.Show("¿Esta seguro de eliminar el producto?",
+                "HUGO APP", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                BusinessDataAccess.EliminarBusiness(txtDeleteBusiness.Text);
+
+                MessageBox.Show("SUCESS: Producto eliminado exitosamente",
+                    "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (txtAddProductName.Text.Equals(""))
+            {
+                MessageBox.Show("¡AVISO: Debe de ingresar información en todos los campos!");
+            }
+            else
+            {
+                try
+                {
+                    string sql = $"INSERT INTO PRODUCT(idBusiness, name) VALUES({cmbNombreNegocioPedido.SelectedValue}, '{txtAddProductName.Text}')";
+                    ConnectionDB.ExecuteQuery(sql);
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("¡AVISO: Ha ocurrido un error!");
+                }
+            }
         }
 
         private void btnCreateUserAdmin_Click(object sender, EventArgs e)

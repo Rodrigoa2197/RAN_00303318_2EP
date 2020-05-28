@@ -3,9 +3,12 @@
   <component name="ContentModelStore">
     <e p="C:\POO_00303318\Parcial 2\Source Code\Parcial_Segundo" t="IncludeRecursive">
       <e p="Address.cs" t="Include" />
+      <e p="AddressDataAccess.cs" t="Include" />
       <e p="App.config" t="Include" />
+      <e p="AppOrder.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Business.cs" t="Include" />
+      <e p="BusinessDataAccess.cs" t="Include" />
       <e p="ConnectionDB.cs" t="Include" />
       <e p="frmLogin.cs" t="Include" />
       <e p="frmLogin.Designer.cs" t="Include" />
@@ -18,6 +21,8 @@
       <e p="packages.config" t="Include" />
       <e p="Parcial_Segundo.csproj" t="IncludeRecursive" />
       <e p="Parcial_Segundo.sln" t="IncludeFlat" />
+      <e p="Product.cs" t="Include" />
+      <e p="ProductDataAccess.cs" t="Include" />
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
         <e p="AssemblyInfo.cs" t="Include" />
