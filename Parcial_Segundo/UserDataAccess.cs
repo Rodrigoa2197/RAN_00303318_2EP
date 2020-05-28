@@ -6,19 +6,19 @@ namespace Parcial_Segundo
 {
     public class UserDataAccess
     {
-        public static User GetUser(String nombre, String contra)
+        public static User GetUser(String username, String password)
         {
-            string sql = String.Format("SELECT * FROM appuser WHERE nombre = '{0}' AND contrasenia = '{1}';", nombre, contra);
+            string sql = String.Format("SELECT * FROM appuser WHERE username = '{0}' AND password = '{1}';", username, password);
 
             DataTable dt = ConnectionDB.ExecuteQuery(sql);
 
                 User add = new User();
                 foreach (DataRow fila in dt.Rows)
                 {
-                    add.fullname = fila[0].ToString();
-                    add.username = fila[1].ToString();
-                    add.password = fila[2].ToString();
-                    add.type = Convert.ToBoolean(fila[3].ToString());
+                    add.fullname = fila[1].ToString();
+                    add.username = fila[2].ToString();
+                    add.password = fila[3].ToString();
+                    add.userType = Convert.ToBoolean(fila[4].ToString());
                 }
             return add;
         }
@@ -33,10 +33,10 @@ namespace Parcial_Segundo
             foreach (DataRow fila in dt.Rows)
             {
                 User add = new User();
-                add.fullname = fila[0].ToString();
-                add.username = fila[1].ToString();
-                add.password = fila[2].ToString();
-                add.type = Convert.ToBoolean(fila[3].ToString());
+                add.fullname = fila[1].ToString();
+                add.username = fila[2].ToString();
+                add.password = fila[3].ToString();
+                add.userType = Convert.ToBoolean(fila[4].ToString());
                 lista.Add(add);
             }
 
@@ -45,7 +45,7 @@ namespace Parcial_Segundo
         public static void NewUser(string fullname, string username, string password, bool type)
         {
             string sql = String.Format(
-                "INSERT INTO appuser(fullname, username, password, userType) VALUES ('{0}', '{1}', '{2}', '{true}');",
+                "INSERT INTO appuser(fullname, username, password, userType) VALUES ('{0}', '{1}', '{2}', '{3}');",
                 fullname, username, password, type);
 
                 ConnectionDB.ExecuteNonQuery(sql);
@@ -53,7 +53,7 @@ namespace Parcial_Segundo
         public static void ActualizarPermiso(string username, bool userType)
         {
             string sql = string.Format(
-                "UPDATE appuser SET userType='{true}' WHERE username='{1}';",
+                "UPDATE appuser SET userType='{0}' WHERE username='{1}';",
                 userType, username);
             
             ConnectionDB.ExecuteNonQuery(sql);

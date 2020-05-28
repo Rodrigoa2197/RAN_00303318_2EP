@@ -22,19 +22,19 @@ namespace Parcial_Segundo
             try
             {
                 var user = UserDataAccess.GetUser(txtLogUser.Text, txtLoginContra.Text);
-                if (user.type is true)
+                if (user.userType is true)
                 {
-                    MessageBox.Show("Usuario y/o contraseña incorrectos","Hugo App",
-                        MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Bienvenido","HUGO App",
+                    MessageBox.Show("SUCESS: Bienvenido","HUGO App",
                         MessageBoxButtons.OK,MessageBoxIcon.Information);
                     frmMainApp ventana = new frmMainApp(user);
                     ventana.Show();
                     this.Hide();
-                
+   
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o contraseña incorrectos","Hugo App",
+                     MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             catch (Exception exception)

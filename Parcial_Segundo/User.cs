@@ -7,14 +7,14 @@ namespace Parcial_Segundo
         public string fullname { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public bool type { get; set; }
+        public bool userType { get; set; }
 
         public User()
         {
             fullname = "";
             username = "";
             password = "";
-            type = true;
+            userType = false;
         }
     }
 }
