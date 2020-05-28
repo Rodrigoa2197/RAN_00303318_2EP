@@ -22,7 +22,7 @@ namespace Parcial_Segundo
             try
             {
                 var user = UserDataAccess.GetUser(txtLogUser.Text, txtLoginContra.Text);
-                if (user.type.Equals(""))
+                if (user.type is true)
                 {
                     MessageBox.Show("Usuario y/o contraseña incorrectos","Hugo App",
                         MessageBoxButtons.OK,MessageBoxIcon.Error);

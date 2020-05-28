@@ -16,7 +16,6 @@ namespace Parcial_Segundo
 
         private void frmMainApp_Load(object sender, EventArgs e)
         {
-            
         }
     }
 }
