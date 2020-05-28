@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\POO_00303318\Parcial 2\Parcial_Segundo" t="IncludeRecursive">
+      <e p="App.config" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="ConnectionDB.cs" t="Include" />
+      <e p="frmLogin.cs" t="Include" />
+      <e p="frmLogin.Designer.cs" t="Include" />
+      <e p="frmLogin.resx" t="Include" />
+      <e p="frmMainApp.cs" t="Include" />
+      <e p="frmMainApp.Designer.cs" t="Include" />
+      <e p="frmMainApp.resx" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Parcial_Segundo.csproj" t="IncludeRecursive" />
+      <e p="Parcial_Segundo.sln" t="IncludeFlat" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="Resources.Designer.cs" t="Include" />
+        <e p="Resources.resx" t="Include" />
+        <e p="Settings.Designer.cs" t="Include" />
+        <e p="Settings.settings" t="Include" />
+      </e>
+      <e p="Resources" t="Include">
+        <e p="background_app.png" t="Include" />
+        <e p="logo_app.png" t="Include" />
+        <e p="logo_mainbackground.png" t="Include" />
+        <e p="logo_mainbackground1.png" t="Include" />
+        <e p="pidamos_hugo.gif" t="Include" />
+      </e>
+      <e p="User.cs" t="Include" />
+      <e p="UserDataAccess.cs" t="Include" />
+    </e>
+    <e p="C:\Users\Rodri\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Rodri\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Parcial_Segundo.1941910420.00" t="ExcludeRecursive" />
+  </component>
+</project>
