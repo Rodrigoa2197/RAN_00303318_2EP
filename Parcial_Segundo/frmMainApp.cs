@@ -21,12 +21,48 @@ namespace Parcial_Segundo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                if (txtFullNameUser.Text == "" || txtUserNameUser.Text == "" || txtUserPassword.Text == "" || Convert.ToBoolean(rbAdmin.Text) == false || Convert.ToBoolean(rbUser.Text) == false)
+                {
+                    MessageBox.Show("¡AVISO: Datos se detectaron campos vacios!",
+                        "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (rbAdmin.Checked is true)
+                    {
+                        user.userType = true;
+                    }
+                    else
+                    {
+                        user.userType = false;
+                    }
+
+                    UserDataAccess.NewUser(txtIdUser.TextLength, txtFullNameUser.Text, txtUserNameUser.Text, txtUserPassword.Text, Convert.ToBoolean(rbAdmin.Text));
+
+                    MessageBox.Show("SUCESS: Usuario agregado con exito!",
+                        "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIdUser.Clear();
+                    txtFullNameUser.Clear();
+                    txtUserNameUser.Clear();
+                    txtUserPassword.Clear();
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("¡AVISO: Datos invalidos!",
+                    "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            UserDataAccess.ActualizarPassword(txtUserNameUser.Text, txtUserPassword.Text);
+           
+            MessageBox.Show("¡SUCCESS: Contraseña Actualizada!",
+                "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnAgregarDireccion_Click(object sender, EventArgs e)
@@ -66,7 +102,14 @@ namespace Parcial_Segundo
 
         private void btnEliminateUserAdmin_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (MessageBox.Show("AVISO: ¿Esta seguro de eliminar el usuario?",
+                "HUGO APP", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                UserDataAccess.EliminarUsuario(txtEliminateUserAdmin.Text);
+            
+                MessageBox.Show("SUCCESS: Usuario eliminado exitosamente",
+                    "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnUpdateDataViewUsers_Click(object sender, EventArgs e)
@@ -90,6 +133,49 @@ namespace Parcial_Segundo
         }
 
         private void btnConsultOrderUser_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void btnCreateUserAdmin_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtFullNameUser.Text == "" || txtUserNameUser.Text == "" || txtUserPassword.Text == "" )
+                {
+                    MessageBox.Show("¡AVISO: Datos se detectaron campos vacios!",
+                        "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (rbAdmin.Checked is true)
+                    {
+                        user.userType = true;
+                    }
+                    else
+                    {
+                        user.userType = false;
+                    }
+
+                    UserDataAccess.NewUser(txtIdUser.TextLength, txtFullNameUser.Text, txtUserNameUser.Text, txtUserPassword.Text, Convert.ToBoolean(rbAdmin.Text));
+
+                    MessageBox.Show("SUCESS: Usuario agregado con exito!",
+                        "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIdUser.Clear();
+                    txtFullNameUser.Clear();
+                    txtUserNameUser.Clear();
+                    txtUserPassword.Clear();
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("¡AVISO: Datos invalidos!",
+                    "HUGO APP", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtUserNameUser_TextChanged(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
         }

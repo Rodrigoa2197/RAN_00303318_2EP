@@ -15,6 +15,7 @@ namespace Parcial_Segundo
                 User add = new User();
                 foreach (DataRow fila in dt.Rows)
                 {
+                    add.idUser = Convert.ToInt32(fila[0].ToString());
                     add.fullname = fila[1].ToString();
                     add.username = fila[2].ToString();
                     add.password = fila[3].ToString();
@@ -33,6 +34,7 @@ namespace Parcial_Segundo
             foreach (DataRow fila in dt.Rows)
             {
                 User add = new User();
+                add.idUser = Convert.ToInt32(fila[0].ToString());
                 add.fullname = fila[1].ToString();
                 add.username = fila[2].ToString();
                 add.password = fila[3].ToString();
@@ -42,11 +44,11 @@ namespace Parcial_Segundo
 
             return lista;
         }
-        public static void NewUser(string fullname, string username, string password, bool type)
+        public static void NewUser(int idUser, string fullname, string username, string password, bool type)
         {
             string sql = String.Format(
-                "INSERT INTO appuser(fullname, username, password, userType) VALUES ('{0}', '{1}', '{2}', '{3}');",
-                fullname, username, password, type);
+                "INSERT INTO appuser(idUser, fullname, username, password, userType) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}');",
+                idUser, fullname, username, password, type);
 
                 ConnectionDB.ExecuteNonQuery(sql);
         }

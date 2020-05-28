@@ -64,7 +64,6 @@ namespace Parcial_Segundo
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtUserDireccion = new System.Windows.Forms.TextBox();
             this.txtAdressDireccion = new System.Windows.Forms.TextBox();
             this.btnEliminarDireccion = new System.Windows.Forms.Button();
             this.btnModificarDireccion = new System.Windows.Forms.Button();
@@ -80,22 +79,26 @@ namespace Parcial_Segundo
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtAdminFullName = new System.Windows.Forms.TextBox();
+            this.btnCreateUserAdmin = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtAdminIdUser = new System.Windows.Forms.TextBox();
+            this.txtAdminCreateUserName = new System.Windows.Forms.TextBox();
             this.txtAdminUserName = new System.Windows.Forms.TextBox();
-            this.btnCreateUserAdmin = new System.Windows.Forms.Button();
-            this.txtAdminPassword = new System.Windows.Forms.TextBox();
             this.tabUsuario = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPasswordUser = new System.Windows.Forms.TextBox();
-            this.txtUserNameUser = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtUserNameUser = new System.Windows.Forms.TextBox();
             this.txtFullNameUser = new System.Windows.Forms.TextBox();
+            this.txtIdUser = new System.Windows.Forms.TextBox();
+            this.txtUserPassword = new System.Windows.Forms.TextBox();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnRegisterUser = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -126,6 +129,7 @@ namespace Parcial_Segundo
             this.button8 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.cmbDireccionUserName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
@@ -559,11 +563,11 @@ namespace Parcial_Segundo
             this.tabAddress.BackColor = System.Drawing.Color.Purple;
             this.tabAddress.BackgroundImage = global::Parcial_Segundo.Properties.Resources.logo_mainbackground;
             this.tabAddress.Controls.Add(this.groupBox4);
-            this.tabAddress.Location = new System.Drawing.Point(4, 25);
+            this.tabAddress.Location = new System.Drawing.Point(4, 29);
             this.tabAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAddress.Name = "tabAddress";
             this.tabAddress.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAddress.Size = new System.Drawing.Size(1038, 679);
+            this.tabAddress.Size = new System.Drawing.Size(1038, 675);
             this.tabAddress.TabIndex = 2;
             this.tabAddress.Text = "Direcciones";
             // 
@@ -592,8 +596,8 @@ namespace Parcial_Segundo
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtUserDireccion, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtAdressDireccion, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cmbDireccionUserName, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -631,15 +635,6 @@ namespace Parcial_Segundo
             this.label5.TabIndex = 1;
             this.label5.Text = "Dirección:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtUserDireccion
-            // 
-            this.txtUserDireccion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUserDireccion.Location = new System.Drawing.Point(214, 96);
-            this.txtUserDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUserDireccion.Name = "txtUserDireccion";
-            this.txtUserDireccion.Size = new System.Drawing.Size(370, 27);
-            this.txtUserDireccion.TabIndex = 2;
             // 
             // txtAdressDireccion
             // 
@@ -693,11 +688,11 @@ namespace Parcial_Segundo
             this.tabAdmin.Controls.Add(this.groupBox9);
             this.tabAdmin.Controls.Add(this.groupBox8);
             this.tabAdmin.Controls.Add(this.groupBox3);
-            this.tabAdmin.Location = new System.Drawing.Point(4, 25);
+            this.tabAdmin.Location = new System.Drawing.Point(4, 29);
             this.tabAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAdmin.Size = new System.Drawing.Size(1038, 679);
+            this.tabAdmin.Size = new System.Drawing.Size(1038, 675);
             this.tabAdmin.TabIndex = 1;
             this.tabAdmin.Text = "Administrador";
             // 
@@ -710,7 +705,7 @@ namespace Parcial_Segundo
             this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox9.ForeColor = System.Drawing.Color.White;
-            this.groupBox9.Location = new System.Drawing.Point(3, 299);
+            this.groupBox9.Location = new System.Drawing.Point(3, 295);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -742,7 +737,7 @@ namespace Parcial_Segundo
             this.dataGridViewUserRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewUserRegister.Name = "dataGridViewUserRegister";
             this.dataGridViewUserRegister.RowTemplate.Height = 24;
-            this.dataGridViewUserRegister.Size = new System.Drawing.Size(825, 346);
+            this.dataGridViewUserRegister.Size = new System.Drawing.Size(825, 331);
             this.dataGridViewUserRegister.TabIndex = 0;
             // 
             // groupBox8
@@ -750,7 +745,7 @@ namespace Parcial_Segundo
             this.groupBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox8.BackColor = System.Drawing.Color.White;
             this.groupBox8.Controls.Add(this.tableLayoutPanel7);
-            this.groupBox8.Location = new System.Drawing.Point(503, 4);
+            this.groupBox8.Location = new System.Drawing.Point(503, 2);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -837,60 +832,79 @@ namespace Parcial_Segundo
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel6.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel6.Controls.Add(this.label14, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.txtAdminFullName, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnCreateUserAdmin, 0, 4);
+            this.tableLayoutPanel6.Controls.Add(this.label14, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.label11, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label12, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label21, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.txtAdminIdUser, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.txtAdminCreateUserName, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.txtAdminUserName, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.btnCreateUserAdmin, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.txtAdminPassword, 1, 2);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 3;
+            this.tableLayoutPanel6.RowCount = 5;
             this.tableLayoutPanel6.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(494, 264);
             this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // txtAdminFullName
+            // 
+            this.txtAdminFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdminFullName.Location = new System.Drawing.Point(195, 12);
+            this.txtAdminFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAdminFullName.Name = "txtAdminFullName";
+            this.txtAdminFullName.Size = new System.Drawing.Size(251, 27);
+            this.txtAdminFullName.TabIndex = 16;
+            // 
+            // btnCreateUserAdmin
+            // 
+            this.btnCreateUserAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel6.SetColumnSpan(this.btnCreateUserAdmin, 2);
+            this.btnCreateUserAdmin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnCreateUserAdmin.Location = new System.Drawing.Point(3, 212);
+            this.btnCreateUserAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreateUserAdmin.Name = "btnCreateUserAdmin";
+            this.btnCreateUserAdmin.Size = new System.Drawing.Size(488, 48);
+            this.btnCreateUserAdmin.TabIndex = 14;
+            this.btnCreateUserAdmin.Text = "Crear Usuario";
+            this.btnCreateUserAdmin.UseVisualStyleBackColor = true;
+            this.btnCreateUserAdmin.Click += new System.EventHandler(this.btnCreateUserAdmin_Click_1);
             // 
             // label14
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label14.Location = new System.Drawing.Point(3, 132);
+            this.label14.Location = new System.Drawing.Point(3, 104);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(142, 66);
+            this.label14.Size = new System.Drawing.Size(142, 52);
             this.label14.TabIndex = 12;
             this.label14.Text = "Contraseña:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAdminFullName
-            // 
-            this.txtAdminFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAdminFullName.Location = new System.Drawing.Point(195, 19);
-            this.txtAdminFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAdminFullName.Name = "txtAdminFullName";
-            this.txtAdminFullName.Size = new System.Drawing.Size(251, 27);
-            this.txtAdminFullName.TabIndex = 6;
             // 
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Unispace", 10.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label11.Location = new System.Drawing.Point(3, 66);
+            this.label11.Location = new System.Drawing.Point(3, 52);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 66);
+            this.label11.Size = new System.Drawing.Size(142, 52);
             this.label11.TabIndex = 2;
             this.label11.Text = "Nombre de Usuario:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -902,43 +916,49 @@ namespace Parcial_Segundo
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label12.Location = new System.Drawing.Point(3, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(142, 66);
+            this.label12.Size = new System.Drawing.Size(142, 52);
             this.label12.TabIndex = 1;
             this.label12.Text = "Nombre Completo:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label21
+            // 
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Unispace", 9F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label21.Location = new System.Drawing.Point(3, 156);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(142, 52);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "idUser";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAdminIdUser
+            // 
+            this.txtAdminIdUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdminIdUser.Location = new System.Drawing.Point(193, 168);
+            this.txtAdminIdUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAdminIdUser.Name = "txtAdminIdUser";
+            this.txtAdminIdUser.Size = new System.Drawing.Size(256, 27);
+            this.txtAdminIdUser.TabIndex = 5;
+            // 
+            // txtAdminCreateUserName
+            // 
+            this.txtAdminCreateUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAdminCreateUserName.Location = new System.Drawing.Point(190, 116);
+            this.txtAdminCreateUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAdminCreateUserName.Name = "txtAdminCreateUserName";
+            this.txtAdminCreateUserName.Size = new System.Drawing.Size(261, 27);
+            this.txtAdminCreateUserName.TabIndex = 4;
+            // 
             // txtAdminUserName
             // 
             this.txtAdminUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAdminUserName.Location = new System.Drawing.Point(190, 85);
+            this.txtAdminUserName.Location = new System.Drawing.Point(195, 64);
             this.txtAdminUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAdminUserName.Name = "txtAdminUserName";
-            this.txtAdminUserName.Size = new System.Drawing.Size(261, 27);
-            this.txtAdminUserName.TabIndex = 4;
-            // 
-            // btnCreateUserAdmin
-            // 
-            this.tableLayoutPanel6.SetColumnSpan(this.btnCreateUserAdmin, 2);
-            this.btnCreateUserAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCreateUserAdmin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnCreateUserAdmin.Location = new System.Drawing.Point(3, 200);
-            this.btnCreateUserAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCreateUserAdmin.Name = "btnCreateUserAdmin";
-            this.btnCreateUserAdmin.Size = new System.Drawing.Size(488, 62);
-            this.btnCreateUserAdmin.TabIndex = 6;
-            this.btnCreateUserAdmin.Text = "Crear Usuario";
-            this.btnCreateUserAdmin.UseVisualStyleBackColor = true;
-            this.btnCreateUserAdmin.Click += new System.EventHandler(this.btnCreateUserAdmin_Click);
-            // 
-            // txtAdminPassword
-            // 
-            this.txtAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtAdminPassword.Location = new System.Drawing.Point(193, 151);
-            this.txtAdminPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAdminPassword.Name = "txtAdminPassword";
-            this.txtAdminPassword.Size = new System.Drawing.Size(256, 27);
-            this.txtAdminPassword.TabIndex = 5;
+            this.txtAdminUserName.Size = new System.Drawing.Size(251, 27);
+            this.txtAdminUserName.TabIndex = 6;
             // 
             // tabUsuario
             // 
@@ -961,7 +981,7 @@ namespace Parcial_Segundo
             this.groupBox1.Controls.Add(this.btnChangePassword);
             this.groupBox1.Controls.Add(this.btnRegisterUser);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(45, 99);
+            this.groupBox1.Location = new System.Drawing.Point(45, 100);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -977,43 +997,43 @@ namespace Parcial_Segundo
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.Controls.Add(this.txtPasswordUser, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtUserNameUser, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label20, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtUserNameUser, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtFullNameUser, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtIdUser, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtUserPassword, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 22);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(
-                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(
+                new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 478);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // txtPasswordUser
+            // label20
             // 
-            this.txtPasswordUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPasswordUser.Location = new System.Drawing.Point(258, 384);
-            this.txtPasswordUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPasswordUser.Name = "txtPasswordUser";
-            this.txtPasswordUser.Size = new System.Drawing.Size(425, 27);
-            this.txtPasswordUser.TabIndex = 5;
-            // 
-            // txtUserNameUser
-            // 
-            this.txtUserNameUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUserNameUser.Location = new System.Drawing.Point(258, 225);
-            this.txtUserNameUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUserNameUser.Name = "txtUserNameUser";
-            this.txtUserNameUser.Size = new System.Drawing.Size(425, 27);
-            this.txtUserNameUser.TabIndex = 4;
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Unispace", 16.2F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label20.Location = new System.Drawing.Point(3, 357);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(211, 121);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "id User:";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -1022,7 +1042,7 @@ namespace Parcial_Segundo
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 159);
+            this.label1.Size = new System.Drawing.Size(211, 119);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre Completo:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1032,9 +1052,9 @@ namespace Parcial_Segundo
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Unispace", 16.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label3.Location = new System.Drawing.Point(3, 318);
+            this.label3.Location = new System.Drawing.Point(3, 238);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 160);
+            this.label3.Size = new System.Drawing.Size(211, 119);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1044,21 +1064,48 @@ namespace Parcial_Segundo
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Unispace", 16.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label2.Location = new System.Drawing.Point(3, 159);
+            this.label2.Location = new System.Drawing.Point(3, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(211, 159);
+            this.label2.Size = new System.Drawing.Size(211, 119);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre de Usuario:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtUserNameUser
+            // 
+            this.txtUserNameUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUserNameUser.Location = new System.Drawing.Point(258, 165);
+            this.txtUserNameUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUserNameUser.Name = "txtUserNameUser";
+            this.txtUserNameUser.Size = new System.Drawing.Size(425, 27);
+            this.txtUserNameUser.TabIndex = 4;
+            // 
             // txtFullNameUser
             // 
             this.txtFullNameUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFullNameUser.Location = new System.Drawing.Point(258, 66);
+            this.txtFullNameUser.Location = new System.Drawing.Point(258, 46);
             this.txtFullNameUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFullNameUser.Name = "txtFullNameUser";
             this.txtFullNameUser.Size = new System.Drawing.Size(425, 27);
             this.txtFullNameUser.TabIndex = 3;
+            // 
+            // txtIdUser
+            // 
+            this.txtIdUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtIdUser.Location = new System.Drawing.Point(258, 404);
+            this.txtIdUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdUser.Name = "txtIdUser";
+            this.txtIdUser.Size = new System.Drawing.Size(425, 27);
+            this.txtIdUser.TabIndex = 5;
+            // 
+            // txtUserPassword
+            // 
+            this.txtUserPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUserPassword.Location = new System.Drawing.Point(258, 284);
+            this.txtUserPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUserPassword.Name = "txtUserPassword";
+            this.txtUserPassword.Size = new System.Drawing.Size(425, 27);
+            this.txtUserPassword.TabIndex = 5;
             // 
             // btnChangePassword
             // 
@@ -1141,10 +1188,10 @@ namespace Parcial_Segundo
             this.tabProductosUser.Controls.Add(this.groupBox14);
             this.tabProductosUser.Controls.Add(this.groupBox12);
             this.tabProductosUser.Controls.Add(this.groupBox11);
-            this.tabProductosUser.Location = new System.Drawing.Point(4, 29);
+            this.tabProductosUser.Location = new System.Drawing.Point(4, 25);
             this.tabProductosUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabProductosUser.Name = "tabProductosUser";
-            this.tabProductosUser.Size = new System.Drawing.Size(1038, 675);
+            this.tabProductosUser.Size = new System.Drawing.Size(1038, 679);
             this.tabProductosUser.TabIndex = 6;
             this.tabProductosUser.Text = "Ordenes(Usuario)";
             // 
@@ -1153,7 +1200,7 @@ namespace Parcial_Segundo
             this.groupBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox14.BackColor = System.Drawing.Color.White;
             this.groupBox14.Controls.Add(this.tableLayoutPanel11);
-            this.groupBox14.Location = new System.Drawing.Point(563, 2);
+            this.groupBox14.Location = new System.Drawing.Point(563, 4);
             this.groupBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1326,7 +1373,7 @@ namespace Parcial_Segundo
             this.groupBox11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox11.ForeColor = System.Drawing.Color.White;
-            this.groupBox11.Location = new System.Drawing.Point(0, 313);
+            this.groupBox11.Location = new System.Drawing.Point(0, 317);
             this.groupBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1344,7 +1391,7 @@ namespace Parcial_Segundo
             this.dataGridViewOrderUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewOrderUser.Name = "dataGridViewOrderUser";
             this.dataGridViewOrderUser.RowTemplate.Height = 24;
-            this.dataGridViewOrderUser.Size = new System.Drawing.Size(1032, 273);
+            this.dataGridViewOrderUser.Size = new System.Drawing.Size(1032, 272);
             this.dataGridViewOrderUser.TabIndex = 3;
             // 
             // tableLayoutPanel8
@@ -1360,7 +1407,7 @@ namespace Parcial_Segundo
             this.tableLayoutPanel8.Controls.Add(this.txtOrderUser, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.label15, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 25);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 31);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -1461,6 +1508,15 @@ namespace Parcial_Segundo
             this.label18.Text = "Nombre de Negocio a Eliminar:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbDireccionUserName
+            // 
+            this.cmbDireccionUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbDireccionUserName.FormattingEnabled = true;
+            this.cmbDireccionUserName.Location = new System.Drawing.Point(296, 95);
+            this.cmbDireccionUserName.Name = "cmbDireccionUserName";
+            this.cmbDireccionUserName.Size = new System.Drawing.Size(206, 28);
+            this.cmbDireccionUserName.TabIndex = 4;
+            // 
             // frmMainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1551,7 +1607,6 @@ namespace Parcial_Segundo
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFullNameUser;
         private System.Windows.Forms.TextBox txtUserNameUser;
-        private System.Windows.Forms.TextBox txtPasswordUser;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -1560,7 +1615,6 @@ namespace Parcial_Segundo
         private System.Windows.Forms.Button btnAgregarDireccion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUserDireccion;
         private System.Windows.Forms.TextBox txtAdressDireccion;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -1622,8 +1676,14 @@ namespace Parcial_Segundo
         private System.Windows.Forms.Button btnEliminateUserAdmin;
         private System.Windows.Forms.TextBox txtEliminateUserAdmin;
         private System.Windows.Forms.Button btnCreateUserAdmin;
-        private System.Windows.Forms.TextBox txtAdminPassword;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnRegisterUser;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtIdUser;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtAdminIdUser;
+        private System.Windows.Forms.TextBox txtAdminCreateUserName;
+        private System.Windows.Forms.TextBox txtUserPassword;
+        private System.Windows.Forms.ComboBox cmbDireccionUserName;
     }
 }
