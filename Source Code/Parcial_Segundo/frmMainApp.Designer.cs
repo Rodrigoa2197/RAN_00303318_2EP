@@ -41,6 +41,7 @@ namespace Parcial_Segundo
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbNombreNegocioPedido = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
@@ -128,7 +129,6 @@ namespace Parcial_Segundo
             this.button8 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.cmbNombreNegocioPedido = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
@@ -210,11 +210,11 @@ namespace Parcial_Segundo
             // 
             this.tabProductsAmin.BackgroundImage = global::Parcial_Segundo.Properties.Resources.logo_mainbackground1;
             this.tabProductsAmin.Controls.Add(this.groupBox10);
-            this.tabProductsAmin.Location = new System.Drawing.Point(4, 25);
+            this.tabProductsAmin.Location = new System.Drawing.Point(4, 29);
             this.tabProductsAmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabProductsAmin.Name = "tabProductsAmin";
             this.tabProductsAmin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabProductsAmin.Size = new System.Drawing.Size(1038, 679);
+            this.tabProductsAmin.Size = new System.Drawing.Size(1038, 675);
             this.tabProductsAmin.TabIndex = 5;
             this.tabProductsAmin.Text = "Ordenes(Administrador)";
             this.tabProductsAmin.UseVisualStyleBackColor = true;
@@ -232,7 +232,7 @@ namespace Parcial_Segundo
             this.groupBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox10.Size = new System.Drawing.Size(1032, 675);
+            this.groupBox10.Size = new System.Drawing.Size(1032, 671);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Visualizar Ordenes";
@@ -256,7 +256,7 @@ namespace Parcial_Segundo
             this.dataGridViewOrderAdmin.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrderAdmin.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewOrderAdmin.Location = new System.Drawing.Point(3, 121);
+            this.dataGridViewOrderAdmin.Location = new System.Drawing.Point(3, 117);
             this.dataGridViewOrderAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewOrderAdmin.Name = "dataGridViewOrderAdmin";
             this.dataGridViewOrderAdmin.RowTemplate.Height = 24;
@@ -268,11 +268,11 @@ namespace Parcial_Segundo
             this.tabProducts.BackgroundImage = global::Parcial_Segundo.Properties.Resources.logo_mainbackground;
             this.tabProducts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabProducts.Controls.Add(this.groupBox7);
-            this.tabProducts.Location = new System.Drawing.Point(4, 29);
+            this.tabProducts.Location = new System.Drawing.Point(4, 25);
             this.tabProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabProducts.Name = "tabProducts";
             this.tabProducts.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabProducts.Size = new System.Drawing.Size(1038, 675);
+            this.tabProducts.Size = new System.Drawing.Size(1038, 679);
             this.tabProducts.TabIndex = 4;
             this.tabProducts.Text = "Pedidos";
             this.tabProducts.UseVisualStyleBackColor = true;
@@ -317,6 +317,16 @@ namespace Parcial_Segundo
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(845, 396);
             this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // cmbNombreNegocioPedido
+            // 
+            this.cmbNombreNegocioPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbNombreNegocioPedido.FormattingEnabled = true;
+            this.cmbNombreNegocioPedido.Location = new System.Drawing.Point(409, 65);
+            this.cmbNombreNegocioPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbNombreNegocioPedido.Name = "cmbNombreNegocioPedido";
+            this.cmbNombreNegocioPedido.Size = new System.Drawing.Size(237, 28);
+            this.cmbNombreNegocioPedido.TabIndex = 4;
             // 
             // label10
             // 
@@ -1180,10 +1190,10 @@ namespace Parcial_Segundo
             this.tabProductosUser.Controls.Add(this.groupBox14);
             this.tabProductosUser.Controls.Add(this.groupBox12);
             this.tabProductosUser.Controls.Add(this.groupBox11);
-            this.tabProductosUser.Location = new System.Drawing.Point(4, 25);
+            this.tabProductosUser.Location = new System.Drawing.Point(4, 29);
             this.tabProductosUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabProductosUser.Name = "tabProductosUser";
-            this.tabProductosUser.Size = new System.Drawing.Size(1038, 679);
+            this.tabProductosUser.Size = new System.Drawing.Size(1038, 675);
             this.tabProductosUser.TabIndex = 6;
             this.tabProductosUser.Text = "Ordenes(Usuario)";
             // 
@@ -1192,7 +1202,7 @@ namespace Parcial_Segundo
             this.groupBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox14.BackColor = System.Drawing.Color.White;
             this.groupBox14.Controls.Add(this.tableLayoutPanel11);
-            this.groupBox14.Location = new System.Drawing.Point(563, 4);
+            this.groupBox14.Location = new System.Drawing.Point(563, 2);
             this.groupBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1365,7 +1375,7 @@ namespace Parcial_Segundo
             this.groupBox11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox11.ForeColor = System.Drawing.Color.White;
-            this.groupBox11.Location = new System.Drawing.Point(0, 317);
+            this.groupBox11.Location = new System.Drawing.Point(0, 313);
             this.groupBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1500,22 +1510,13 @@ namespace Parcial_Segundo
             this.label18.Text = "Nombre de Negocio a Eliminar:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cmbNombreNegocioPedido
-            // 
-            this.cmbNombreNegocioPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbNombreNegocioPedido.FormattingEnabled = true;
-            this.cmbNombreNegocioPedido.Location = new System.Drawing.Point(409, 65);
-            this.cmbNombreNegocioPedido.Name = "cmbNombreNegocioPedido";
-            this.cmbNombreNegocioPedido.Size = new System.Drawing.Size(237, 28);
-            this.cmbNombreNegocioPedido.TabIndex = 4;
-            // 
             // frmMainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Parcial_Segundo.Properties.Resources.background_app;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1106, 808);
+            this.ClientSize = new System.Drawing.Size(1092, 767);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

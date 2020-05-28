@@ -35,6 +35,26 @@ namespace Parcial_Segundo
             cmbNombreNegocioPedido.ValueMember = "idBusiness";
             cmbNombreNegocioPedido.DisplayMember = "name";
             cmbNombreNegocioPedido.DataSource = lista;
+            try
+            {
+                sql = "SELECT * FROM APPUSER";
+                dt = ConnectionDB.ExecuteQuery(sql);
+                dataGridViewOrderAdmin.DataSource = dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("AVISO: Ha ocurrido un error");
+            }
+            try
+            {
+                sql = "SELECT ao.idOrder, ao.createDate, pr.name, au.fullname, ad.address FROM APPORDER ao, ADDRESS ad, PRODUCT pr, APPUSER au WHERE ao.idProduct = pr.idProduct AND ao.idAddress = ad.idAddress AND ad.idUser = au.idUser";
+                dt = ConnectionDB.ExecuteQuery(sql);
+                dataGridViewOrderAdmin.DataSource = dt;
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Ha ocurrido un error");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -175,9 +195,47 @@ namespace Parcial_Segundo
 
         private void btnUpdateOrderAdmin_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                SearchVerification(btnUpdateOrderAdmin.Text);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+
         }
 
+        public void SearchVerification(String a)
+        {
+            try
+            {
+                int number = Convert.ToInt32(a);
+                bool idExist = false;
+                string sql = "SELECT idUser FROM APPUSER";
+                DataTable dt = ConnectionDB.ExecuteQuery(sql);
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (Convert.ToInt32(row[0].ToString()) == number)
+                    {
+                        string sqlSearch = $"SELECT ao.idOrder, ao.createDate, pr.name, au.fullname, ad.address FROM APPORDER ao, ADDRESS ad, PRODUCT pr, APPUSER au WHERE ao.idProduct = pr.idProduct AND ao.idAddress = ad.idAddress AND ad.idUser = au.idUser AND au.idUser = {number}";
+                        DataTable dtSearch = ConnectionDB.ExecuteQuery(sqlSearch);
+                        dataGridViewOrderAdmin.DataSource = dtSearch;
+                        idExist = true;
+                    }
+                }
+                if (!idExist)
+                {
+                    throw new Exception("AVISO: Debe de ingresar un ID válido");
+                }
+            }
+            catch (Exception exc)
+            {
+                throw new Exception(exc.Message);
+            }
+            
+        } 
+         
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
