@@ -20,7 +20,7 @@ namespace Preparcial.Controlador
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
 
             return productos;
@@ -43,66 +43,66 @@ namespace Preparcial.Controlador
                 {
                     productos.Add(new Inventario
                         (
-                            Convert.ToInt32(dr[0].ToString()),//Se ha cambiado la propiedad de string a int al id articulo, ya que en la bd es delcarado como int no string
+                            dr[0].ToString(),//Se ha cambiado la propiedad de string a int al id articulo, ya que en la bd es declarado como int no string  pero dio error se volvio a su estado original
                             dr[1].ToString(),
                             dr[2].ToString(),
                             dr[3].ToString(),
-                            Convert.ToInt32(dr[4].ToString())//Se ha cambiado la propiedad de string a int al stock, ya que en la bd es delcarado como int no string
+                            dr[4].ToString()//Se habia cambiado la propiedad de string a int al stock, ya que en la bd es declarado como int no string pero dio error se volvio a su estado original
                         )
                     );
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
 
             return productos;
         }
 
         // Metodo para anadir productos
-        public static void AnadirProducto(string nombreArt, string descripcion, string precio, int stock)// Se ha modificado el "string stock a int stock" para que se almacene de manera correcta en la bd
+        public static void AnadirProducto(string producto, string descripcion, string precio, string stock)// Se ha modificado el "string stock a int stock" para que se almacene de manera correcta en la bd
         {
             try
             {
                 ConexionBD.EjecutarComando("INSERT INTO INVENTARIO(nombreArt, descripcion, precio, stock)" + // se modificio la declaracion nombreArticulo a nombreArt
-                    $" VALUES('{nombreArt}', '{descripcion}', {precio}, {stock})");
+                    $" VALUES('{producto}', '{descripcion}', '{precio}', '{stock}')");
 
-                MessageBox.Show("Se ha agregado el producto");
+                MessageBox.Show("SUCCESS: Se ha agregado el producto");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
         }
 
         // Metodo para eliminar productos
-        public static void EliminarProducto(string id)
+        public static void EliminarProducto(string idArticulo)
         {
             try
             {
-                ConexionBD.EjecutarComando($"DELETE FROM INVENTARIO WHERE idArticulo = {id}");
+                ConexionBD.EjecutarComando($"DELETE FROM INVENTARIO WHERE idArticulo = {idArticulo}");
 
-                MessageBox.Show("Se ha eliminado el producto");
+                MessageBox.Show("SUCCESS: Se ha eliminado el producto");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
         }
 
         // Metodo para actualizar stock de un producto
-        public static void ActualizarProducto(string id, string stock)
+        public static void ActualizarProducto(string idArticulo, string stock)
         {
             try
             {
-                ConexionBD.EjecutarComando($"UPDATE INVENTARIO SET stock = {stock} WHERE idArticulo = {id}");
+                ConexionBD.EjecutarComando($"UPDATE INVENTARIO SET stock = {stock} WHERE idArticulo = {idArticulo}");
 
-                MessageBox.Show("Se ha actualizado el producto");
+                MessageBox.Show("SUCCESS: Se ha actualizado el producto");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
         }
     }

@@ -29,7 +29,7 @@ namespace Preparcial
         private void PoblarControlers()
         {
             cmbUser.DataSource = null;
-            cmbUser.ValueMember = "Contrasenia";
+            cmbUser.ValueMember = "Contrasena"; //se modifico el nombre de Contrasenia a Contraseña para que almacene de manera correcta los datos
             cmbUser.DisplayMember = "NombreUsuario";
             cmbUser.DataSource = ControladorUsuario.GetUsuarios();
         }
@@ -48,14 +48,15 @@ namespace Preparcial
                 frmMain.Show();
             }
             else
-                MessageBox.Show("Contrasena incorrecta");
+                MessageBox.Show("AVISO: Contraseña incorrecta");
         }
 
         // EventHandler para invocar al form de actualizar contrasena
         private void BttnUpdatePassword_Click(object sender, EventArgs e)
         {
             FrmPassword frmPassword = new FrmPassword();
-            frmPassword.Show();
+            frmPassword.ShowDialog(); //Enseña de manera mas efectiva lo almacenado
+            PoblarControlers(); //Actualiza de manara efectiva y correcta lo almacenado dentro del programa y bd
         }
     }
 }

@@ -29,24 +29,26 @@ namespace Preparcial.Vista
 
         private void ActualizarControlers()
         {
-            comboBox1.ValueMember = "contrasenia";
+            comboBox1.ValueMember = "Contrasena"; //Se modifico para desplegar de manera correcta
             comboBox1.DataSource = ControladorUsuario.GetUsuarios();
-            comboBox1.DisplayMember = "nombre";
+            comboBox1.DisplayMember = "NombreUsuario"; //se modifico para desplegar de manera correcta
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-        if (txtOldPassword.Text.Equals(comboBox1.SelectedValue.ToString()))
-        {       
-        var obtenerUsuario = (Usuario)comboBox1.SelectedItem;
+            if (txtOldPassword.Text.Equals(comboBox1.SelectedValue.ToString()))
+            {       
+                var obtenerUsuario = (Usuario)comboBox1.SelectedItem;
 
-        ActualizarControlers();
-                        
-        ControladorUsuario.ActualizarContrasena(obtenerUsuario.idUsuario,
-        txtNewPassword.Text);
-        }
-        else
-    MessageBox.Show("Contrasena actual incorrecta");
+                ActualizarControlers();
+                                
+                ControladorUsuario.ActualizarContrasena(obtenerUsuario.IdUsuario,// se modifico la variable "idUsuario a IdUsuario" declarada para que esta funcione de manera correcta en el programa
+                txtNewPassword.Text);
+            }
+            else
+            {
+                MessageBox.Show("Contraseña actual incorrecta");
+            }
         }
     }
 }

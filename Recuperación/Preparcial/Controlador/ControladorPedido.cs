@@ -12,7 +12,7 @@ namespace Preparcial.Controlador
 
             try
             {
-                pedidos = ConexionBD.EjecutarConsulta("SELECT p.idPedido, i.nombreArt, p.cantidad, i.precio, (i.precio * p.cantidad) AS total" + // Se modifico nombreArticulo a nombreArt segun en SLACK para que se almacene en la base de datos
+                pedidos = ConexionBD.EjecutarConsulta("SELECT p.idPedido, i.nombreArt, p.cantidad, i.precio" + // Se modifico nombreArticulo a nombreArt segun en SLACK para que se almacene en la base de datos
                                                       " FROM PEDIDO p, INVENTARIO i, USUARIO u" +
                                                       " WHERE p.idArticulo = i.idArticulo" +
                                                       " AND p.idUsuario = u.idUsuario" +
@@ -20,7 +20,7 @@ namespace Preparcial.Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
 
             return pedidos;
@@ -32,14 +32,14 @@ namespace Preparcial.Controlador
 
             try
             {
-                pedidos = ConexionBD.EjecutarConsulta("SELECT p.idPedido, i.nombreArt, p.cantidad, i.precio, (i.precio * p.cantidad) AS total" +// Se modifico nombreArticulo a nombreArt segun en SLACK para que se almacene en la base de datos
+                pedidos = ConexionBD.EjecutarConsulta("SELECT p.idPedido, i.nombreArt, p.cantidad, i.precio" +// Se modifico nombreArticulo a nombreArt segun en SLACK para que se almacene en la base de datos
                                                       " FROM PEDIDO p, INVENTARIO i, USUARIO u" +
                                                       " WHERE p.idArticulo = i.idArticulo" +
                                                       " AND p.idUsuario = u.idUsuario");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
 
             return pedidos;
@@ -54,7 +54,7 @@ namespace Preparcial.Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
         }
     }

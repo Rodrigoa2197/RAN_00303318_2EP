@@ -42,9 +42,10 @@ namespace Preparcial.Vista
 
         private void ActualizarOrdenesUsuario()
         {
-            dgvMyOrders.DataSource = ControladorPedido.GetPedidosUsuarioTable(u.idUsuario.ToString());
+            dgvMyOrders.DataSource = ControladorPedido.GetPedidosUsuarioTable(u.IdUsuario);
+            cmbProductMakeOrder.DataSource = null; //se inicializa en nulo para que alamacene y depliegue los valores correctos
             cmbProductMakeOrder.ValueMember = "idArticulo";
-            cmbProductMakeOrder.DisplayMember = "nombreArt";
+            cmbProductMakeOrder.DisplayMember = "produto"; //se ha modificado de nombreArt a producto para que se dspliegue de manera correcta
             cmbProductMakeOrder.DataSource = ControladorInventario.GetProductos();
         }
 
@@ -54,7 +55,7 @@ namespace Preparcial.Vista
                 txtDescriptionInventary.Text.Equals("") &&
                 txtPriceInventary.Text.Equals("") &&
                 txtStockInventary.Text.Equals(""))
-                MessageBox.Show("No puede dejar campos vacios");
+                MessageBox.Show("AVISO: No puede dejar campos vacios");
             else
             {
                 ControladorInventario.AnadirProducto(txtProductNameInventary.Text, txtDescriptionInventary.Text,
@@ -67,7 +68,7 @@ namespace Preparcial.Vista
         private void bttnDeleteInventary_Click(object sender, EventArgs e)
         {
             if(txtDeleteInventary.Text.Equals(""))
-                MessageBox.Show("No puede dejar campos vacios");
+                MessageBox.Show("AVISO: No puede dejar campos vacios");
             else
             {
                 ControladorInventario.EliminarProducto(txtDeleteInventary.Text);
@@ -77,8 +78,8 @@ namespace Preparcial.Vista
 
         private void bttnUpdateStockInventary_Click(object sender, EventArgs e)
         {
-            if (txtUpdateStockIdInventary.Text.Equals("") && txtUpdateStockInventary.Text.Equals(""))
-                MessageBox.Show("No puede dejar campos vacios");
+            if (txtUpdateStockIdInventary.Text.Equals("") || txtUpdateStockInventary.Text.Equals("")) // se le puso un OR por la condicion por si tiene uno que es igual que el otro se cumple la condicion  
+                MessageBox.Show("AVISO: No puede dejar campos vacios");
             else
             {
                 ControladorInventario.ActualizarProducto(txtUpdateStockIdInventary.Text, txtUpdateStockInventary.Text);
@@ -89,31 +90,34 @@ namespace Preparcial.Vista
         private void bttnMakeOrder_Click(object sender, EventArgs e)
         {
             if (txtMakeOrderQuantity.Text.Equals(""))
-                MessageBox.Show("No puede dejar campos vacios");
+                MessageBox.Show("AVISO: No puede dejar campos vacios");
             else
             {
-                ControladorPedido.HacerPedido(u.idUsuario.ToString(), cmbProductMakeOrder.SelectedValue.ToString(), txtMakeOrderQuantity.Text);
+                ControladorPedido.HacerPedido(u.IdUsuario, cmbProductMakeOrder.SelectedValue.ToString(), txtMakeOrderQuantity.Text);
                 ActualizarOrdenesUsuario();
             }
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedTab.Name.Equals("createNewUserTab") && u.tipo)
+            if (tabControl1.SelectedTab.Name.Equals("createNewUserTab") && u.Admin)
                 ActualizarCrearUsuario();
 
-            else if (tabControl1.SelectedTab.Name.Equals("inventaryTab") && u.tipo)
+            else if (tabControl1.SelectedTab.Name.Equals("inventaryTab") && u.Admin)
                 ActualizarInventario();
 
-            else if (tabControl1.SelectedTab.Name.Equals("createOrderTab") && !u.tipo)
+            else if (tabControl1.SelectedTab.Name.Equals("createOrderTab") && !u.Admin)
                 ActualizarOrdenesUsuario();
 
-            else if (tabControl1.SelectedTab.Name.Equals("viewOrdersTab") && u.tipo)
+            else if (tabControl1.SelectedTab.Name.Equals("viewOrdersTab") && u.Admin)
                 ActualizarOrdenes();
+            
+            else if(tabControl1.SelectedTab.Name.Equals("generalTab")) //NO tuviera sentido que el usuario comun no tuviera accesso a esta tabulación por eso esta condición permite acceder a ello
+                tabControl1.SelectedTab = tabControl1.TabPages[0];
             
             else
             {
-                MessageBox.Show("No tiene permisos para ver esta pestana");
+                MessageBox.Show("AVISO: No tiene permisos para ver esta pestana");
                 tabControl1.SelectedTab = tabControl1.TabPages[0];
             }
 

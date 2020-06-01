@@ -9,6 +9,7 @@ namespace Preparcial.Modelo
 
         public class Inventario
         {
+            //Se ha modificado los atributos a publico para mayor acceso al ser llamados
             public string idArticulo { get; }
             public string producto { get; }
             public string descripcion { get; }
@@ -22,9 +23,7 @@ namespace Preparcial.Modelo
                 this.descripcion = descripcion;
                 this.precio = precio;
                 this.stock = stock;
-            } 
-            public int GetProductId() { // Cuando sea llamado el get product Id este cambiara el atributo string a int, ya que este lo almacena como int segun la base de datos
-                return Convert.ToInt32(idArticulo);
             }
-    }
+            
+        }
 }

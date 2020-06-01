@@ -8,6 +8,7 @@ namespace Preparcial.Modelo
 {
     public class Pedido
     {
+        //Se ha modificado a publico los atributos para ser accesible al ser llamados 
         public string idPedido { get; }
         public string idUsuario { get; }
         public string idArticulo { get; }

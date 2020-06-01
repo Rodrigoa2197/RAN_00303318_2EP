@@ -19,14 +19,14 @@ namespace Preparcial.Controlador
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
 
             foreach(DataRow dr in tableUsuarios.Rows)
             {
                 usuarios.Add(new Usuario
                     (
-                        dr[0].ToString(), //Al principio cambie esto a convert.Toint32 
+                        dr[0].ToString(), //Al principio cambie esto a convert.Toint32 y no me agarro el "idUsuario:", como tendría que ser y por ello deje el atributo "idUsuario" declarado como string
                         dr[1].ToString(),
                         dr[2].ToString(),
                         Convert.ToBoolean(dr[3].ToString())
@@ -47,7 +47,7 @@ namespace Preparcial.Controlador
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
 
             return tableUsuarios;
@@ -58,28 +58,27 @@ namespace Preparcial.Controlador
             try
             {
                 ConexionBD.EjecutarComando($"UPDATE USUARIO SET contrasenia = '{contrasenia}' " +
-                    $"WHERE idUsuario = '{idUsuario}'");//Se modifico la declaracion de {} le hacia falta lo siguiente: '{}' para realizar de manera correcta la consulta
- 
-                MessageBox.Show("Se ha actualizado la contrasena");
+                    $"WHERE idUsuario = {idUsuario}"); // se ha modificado para que se almacene de manera correcta la contraseña 
+                MessageBox.Show("SUCESS: Se ha actualizado la contrasena");
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
         }
 
-        public static void CrearUsuario(string nombre, string contrasenia, string tipo)
+        public static void CrearUsuario(string nombre)
         {
             try
             {
-                ConexionBD.EjecutarComando("INSERT INTO USUARIO(nombre, contrasenia, tipo)" +
-                    $" VALUES('{nombre}', '{contrasenia}', {tipo})");
+                ConexionBD.EjecutarComando("INSERT INTO USUARIO(nombre, contrasenia, tipo)" + //Se ha modificado inset into USUARIO los parametros para que se alamacene de manera correcta en la base de datos
+                    $" VALUES('{nombre}', '{nombre}', false)");
 
-                MessageBox.Show("Se ha agregado el nuevo usuario, contrasenia igual al nombre");
+                MessageBox.Show("SUCESS: Se ha agregado el nuevo usuario, contrasenia igual al nombre");
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error");
+                MessageBox.Show("AVISO: Ha ocurrido un error");
             }
         }
     }
